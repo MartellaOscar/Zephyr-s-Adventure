@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkh6wuu1niv47"]
+
+[ext_resource type="Texture2D" uid="uid://2dxsxfoxflfv" path="res://sfondi e oggetti/sfondoiniziale.jpg" id="1_xk8cw"]
+
+[node name="scenainiziale" type="Node2D"]
+position = Vector2(42, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(913.5, 514.5)
+scale = Vector2(1.00156, 1.01204)
+texture = ExtResource("1_xk8cw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -36.0
+offset_top = -21.0
+offset_right = 1875.0
+offset_bottom = 263.0
+size_flags_horizontal = 10
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="scrittainiziale" type="Label" parent="Control"]
+offset_left = -39.0
+offset_top = -22.0
+offset_right = 1877.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 150
+text = "ZEPHYR'S ADVENTURE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+visible_characters_behavior = 4
+
+[node name="TextureButton" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
