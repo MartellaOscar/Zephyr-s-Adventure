@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://5qr4qm2v204y"]
+
+[ext_resource type="Script" path="res://script/area1.gd" id="1_rxrdr"]
+
+[node name="area1" type="Node2D"]
+script = ExtResource("1_rxrdr")
+
+[node name="test" type="Button" parent="."]
+offset_right = 630.0
+offset_bottom = 397.0
+text = "test
+"
+
+[connection signal="pressed" from="test" to="." method="_on_test_pressed"]

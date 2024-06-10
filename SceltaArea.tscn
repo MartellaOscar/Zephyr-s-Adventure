@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjp6w6fre3404"]
+
+[ext_resource type="Script" path="res://script/SceltaArea.gd" id="1_ff8yo"]
+[ext_resource type="Texture2D" uid="uid://dal8k1mmx71ph" path="res://sfondi e oggetti/download_image_1717326451901.png" id="1_lyulh"]
+[ext_resource type="Texture2D" uid="uid://2dxsxfoxflfv" path="res://sfondi e oggetti/sfondoiniziale.jpg" id="2_q6gbu"]
+[ext_resource type="Texture2D" uid="uid://bijomr2cvt34k" path="res://sfondi e oggetti/iconbuttons.png" id="4_2a3ub"]
+[ext_resource type="PackedScene" uid="uid://cxuffbh4d2ur6" path="res://AniMondoUno.tscn" id="4_ahlx5"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4537w"]
+viewport_path = NodePath("Control/sabbia/SubViewport")
+
+[node name="SceltaArea" type="Node2D"]
+position = Vector2(42, 25)
+script = ExtResource("1_ff8yo")
+
+[node name="scritta" type="Sprite2D" parent="."]
+position = Vector2(930.25, 257.617)
+scale = Vector2(0.907845, 1.07877)
+texture = ExtResource("1_lyulh")
+
+[node name="sfondo" type="Sprite2D" parent="."]
+position = Vector2(912.877, 637.309)
+scale = Vector2(1.02304, 0.771651)
+texture = ExtResource("2_q6gbu")
+metadata/_edit_group_ = true
+
+[node name="sfondo2" type="Sprite2D" parent="sfondo"]
+position = Vector2(3.64692, -806.171)
+scale = Vector2(1.02467, 0.148841)
+texture = ExtResource("2_q6gbu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tertari" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.262
+anchor_top = 14.325
+anchor_right = 6.262
+anchor_bottom = 14.325
+offset_left = 310.52
+offset_top = -348.0
+offset_right = 994.52
+offset_bottom = 169.0
+icon = SubResource("ViewportTexture_4537w")
+flat = true
+text_overrun_behavior = 3
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/tertari"]
+
+[node name="Node3D" parent="Control/tertari/SubViewport" instance=ExtResource("4_ahlx5")]
+
+[node name="sabbia" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.262
+anchor_top = 14.325
+anchor_right = 6.262
+anchor_bottom = 14.325
+offset_left = 903.52
+offset_top = -227.0
+offset_right = 1587.52
+offset_bottom = 290.0
+icon = SubResource("ViewportTexture_4537w")
+flat = true
+text_overrun_behavior = 3
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/sabbia"]
+
+[node name="Node3D" parent="Control/sabbia/SubViewport" instance=ExtResource("4_ahlx5")]
+
+[node name="tertari2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.262
+anchor_top = 14.325
+anchor_right = 6.262
+anchor_bottom = 14.325
+offset_left = -238.48
+offset_top = -184.0
+offset_right = 445.52
+offset_bottom = 333.0
+icon = SubResource("ViewportTexture_4537w")
+flat = true
+text_overrun_behavior = 3
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/tertari2"]
+
+[node name="Node3D" parent="Control/tertari2/SubViewport" instance=ExtResource("4_ahlx5")]
+
+[node name="Buttonreturn" type="Button" parent="Control"]
+offset_left = 26.0
+offset_top = 866.0
+offset_right = 135.0
+offset_bottom = 1012.0
+text = "BACK ↩"
+icon = ExtResource("4_2a3ub")
+flat = true
+icon_alignment = 1
+
+[node name="tertari3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.262
+anchor_top = 14.325
+anchor_right = 6.262
+anchor_bottom = 14.325
+offset_left = 395.52
+offset_top = 40.0
+offset_right = 901.52
+offset_bottom = 469.0
+icon = SubResource("ViewportTexture_4537w")
+flat = true
+text_overrun_behavior = 3
+clip_text = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="SubViewport" type="SubViewport" parent="Control/tertari3"]
+
+[node name="Node3D" parent="Control/tertari3/SubViewport" instance=ExtResource("4_ahlx5")]
+
+[connection signal="pressed" from="Control/tertari" to="." method="_on_buttonArea1_pressed"]
+[connection signal="pressed" from="Control/sabbia" to="." method="_on_buttonArea1_pressed"]
+[connection signal="pressed" from="Control/tertari2" to="." method="_on_buttonArea1_pressed"]
+[connection signal="pressed" from="Control/Buttonreturn" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="Control/tertari3" to="." method="_on_buttonArea1_pressed"]

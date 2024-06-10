@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2dxsxfoxflfv"
-path.s3tc="res://.godot/imported/sfondoiniziale.jpg-1b5bc77794f3fa069da50aa2022344e3.s3tc.ctex"
+uid="uid://bijomr2cvt34k"
+path="res://.godot/imported/iconbuttons.png-c3f91c9117495af76a58d3512ad0c95c.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://sfondi e oggetti/sfondoiniziale.jpg"
-dest_files=["res://.godot/imported/sfondoiniziale.jpg-1b5bc77794f3fa069da50aa2022344e3.s3tc.ctex"]
+source_file="res://sfondi e oggetti/iconbuttons.png"
+dest_files=["res://.godot/imported/iconbuttons.png-c3f91c9117495af76a58d3512ad0c95c.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

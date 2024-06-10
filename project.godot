@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Zephyr's Adventure"
-run/main_scene="res://scenainiziale.tscn"
+run/main_scene="res://ScenaIniziale.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 

@@ -1,22 +1,99 @@
-[gd_scene load_steps=3 format=3 uid="uid://bkh6wuu1niv47"]
+[gd_scene load_steps=7 format=3 uid="uid://bkh6wuu1niv47"]
 
-[ext_resource type="Texture2D" uid="uid://2dxsxfoxflfv" path="res://sfondi e oggetti/sfondoiniziale.jpg" id="1_xk8cw"]
-[ext_resource type="Texture2D" uid="uid://dal8k1mmx71ph" path="res://sfondi e oggetti/download_image_1717326451901.png" id="2_foid6"]
+[ext_resource type="Script" path="res://script/ScenaIniziale.gd" id="1_btq1y"]
+[ext_resource type="Texture2D" uid="uid://dal8k1mmx71ph" path="res://sfondi e oggetti/download_image_1717326451901.png" id="1_n0npr"]
+[ext_resource type="Texture2D" uid="uid://2dxsxfoxflfv" path="res://sfondi e oggetti/sfondoiniziale.jpg" id="2_2xan1"]
+[ext_resource type="Texture2D" uid="uid://bijomr2cvt34k" path="res://sfondi e oggetti/iconbuttons.png" id="4_gvlve"]
+[ext_resource type="PackedScene" uid="uid://cxuffbh4d2ur6" path="res://AniMondoUno.tscn" id="5_702lj"]
 
-[node name="scenainiziale" type="Node2D"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dpx5l"]
+viewport_path = NodePath("mondo1/SubViewport")
+
+[node name="ScenaIniziale" type="Node2D"]
 position = Vector2(42, 25)
+script = ExtResource("1_btq1y")
 
 [node name="scritta" type="Sprite2D" parent="."]
 position = Vector2(930, 257)
 scale = Vector2(0.907845, 1.07877)
-texture = ExtResource("2_foid6")
+texture = ExtResource("1_n0npr")
 
 [node name="sfondo" type="Sprite2D" parent="."]
-position = Vector2(913.252, 637)
-scale = Vector2(0.996612, 0.775926)
-texture = ExtResource("1_xk8cw")
+position = Vector2(922, 654)
+scale = Vector2(1.01042, 0.807407)
+texture = ExtResource("2_2xan1")
 
-[node name="sfondo2" type="Sprite2D" parent="sfondo"]
-position = Vector2(3.30304, -806.171)
-scale = Vector2(1.00497, 0.148841)
-texture = ExtResource("1_xk8cw")
+[node name="sfondo2" type="Sprite2D" parent="."]
+position = Vector2(923, 11.4709)
+scale = Vector2(1.00937, 0.11549)
+texture = ExtResource("2_2xan1")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 866.0
+offset_top = 451.0
+offset_right = 926.0
+offset_bottom = 496.0
+mouse_filter = 1
+
+[node name="Buttonplay" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -146.5
+offset_right = 206.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "PLAY"
+icon = ExtResource("4_gvlve")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Buttonoptions" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = 214.5
+offset_right = 206.0
+offset_bottom = 413.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+toggle_mode = true
+button_pressed = true
+action_mode = 0
+text = "OPTIONS
+"
+icon = ExtResource("4_gvlve")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="mondo1" type="Sprite2D" parent="."]
+position = Vector2(145.438, 451.5)
+scale = Vector2(0.919678, 0.888672)
+texture = SubResource("ViewportTexture_dpx5l")
+
+[node name="SubViewport" type="SubViewport" parent="mondo1"]
+own_world_3d = true
+size_2d_override = Vector2i(500, 300)
+
+[node name="Node3D" parent="mondo1/SubViewport" instance=ExtResource("5_702lj")]
+
+[connection signal="pressed" from="Control/Buttonplay" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Control/Buttonoptions" to="." method="_on_ButtonOptions_pressed"]
